@@ -10,27 +10,28 @@ public class Bullet : MonoBehaviour {
 	private GameObject parent;
 	private Vector3 direction;
 	private Collider coll;
-	private ParticleSystem ps;
+	private ParticleSystem[] particles;
 	private TrailRenderer trail;
-	private Light glow;
 	private float lifeTime;
+	private bool dead = true;
 
 	public void Init(WeaponConfig config, GameObject parent, Vector3 position, float angle) {
+		dead = false;
 		coll = GetComponent<Collider>();
-		ps = GetComponent<ParticleSystem>();
+		particles = GetComponentsInChildren<ParticleSystem>();
 		trail = GetComponentInChildren<TrailRenderer>();
-		glow = GetComponentInChildren<Light>();
-		direction = new Vector3(Mathf.Sin(angle * Mathf.Deg2Rad), Mathf.Cos(angle * Mathf.Deg2Rad), 0);
+		direction = Quaternion.Euler(0, angle, 0) * parent.transform.forward;
 		transform.position = position;
 		trail.Clear();
 		this.config = config;
 		this.parent = parent;
-		ParticleSystem.ColorOverLifetimeModule colm = ps.colorOverLifetime;
-		colm.color = config.gradient;
-		trail.colorGradient = config.gradient;
+		foreach (ParticleSystem ps in particles) {
+			ParticleSystem.ColorOverLifetimeModule colm = ps.colorOverLifetime;
+			colm.color = config.trailGradient;
+		}
+		trail.colorGradient = config.trailGradient;
 		trail.time = config.trailLenght;
 		trail.widthMultiplier = config.trailWidth;
-		glow.color = config.glowColor;
 		lifeTime = config.duration;
 	}
 
@@ -38,7 +39,11 @@ public class Bullet : MonoBehaviour {
 	void Update() {
 		lifeTime -= Time.deltaTime;
 		if (lifeTime <= 0) {
-			BulletManager.Instance.Return(this);
+			if (!dead) {
+				Die();
+			} else if (lifeTime <= -config.deathTime) {
+				BulletManager.Instance.Return(this);
+			}
 			return;
 		}
 		switch (config.behaviour) {
@@ -47,6 +52,14 @@ public class Bullet : MonoBehaviour {
 				break;
 			default:
 				break;
+		}
+	}
+
+	public void Die() {
+		dead = true;
+		lifeTime = 0f;
+		foreach (ParticleSystem ps in particles) {
+			ps.Stop();
 		}
 	}
 

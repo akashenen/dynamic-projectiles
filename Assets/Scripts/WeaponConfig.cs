@@ -5,8 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Weapon", menuName = "Data/Weapon", order = 2)]
 public class WeaponConfig : ScriptableObject {
 	[Header("Visual")]
-	public Gradient gradient;
-	public Color glowColor;
+	public Color mainColor;
+	public Gradient trailGradient;
 	public float trailLenght;
 	public float trailWidth;
 
@@ -19,6 +19,7 @@ public class WeaponConfig : ScriptableObject {
 	public bool randomAngle;
 	public float speed;
 	public float duration;
+	public float deathTime = 0.5f;
 	public float damageMulti;
 	public float rateMulti;
 	public BulletBehaviour behaviour;
