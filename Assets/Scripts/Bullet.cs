@@ -3,33 +3,34 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider))]
-[RequireComponent(typeof(ParticleSystem))]
 public class Bullet : MonoBehaviour {
+
+	public ParticleSystem mainParticle;
+	public ParticleSystem secondaryParticle;
+	public TrailRenderer trail;
 
 	private WeaponConfig config;
 	private GameObject parent;
 	private Vector3 direction;
 	private Collider coll;
-	private ParticleSystem[] particles;
-	private TrailRenderer trail;
 	private float lifeTime;
 	private bool dead = true;
 
 	public void Init(WeaponConfig config, GameObject parent, Vector3 position, float angle) {
 		dead = false;
 		coll = GetComponent<Collider>();
-		particles = GetComponentsInChildren<ParticleSystem>();
-		trail = GetComponentInChildren<TrailRenderer>();
 		direction = Quaternion.Euler(0, angle, 0) * parent.transform.forward;
 		transform.position = position;
 		trail.Clear();
 		this.config = config;
 		this.parent = parent;
-		foreach (ParticleSystem ps in particles) {
-			ParticleSystem.ColorOverLifetimeModule colm = ps.colorOverLifetime;
-			colm.color = config.trailGradient;
-		}
-		trail.colorGradient = config.trailGradient;
+		ParticleSystem.MainModule main = mainParticle.main;
+		main.startColor = config.mainColor;
+		ParticleSystem.ColorOverLifetimeModule col = secondaryParticle.colorOverLifetime;
+		Gradient grad = new Gradient();
+		grad.SetKeys(config.colorGradient.colorKeys, col.color.gradient.alphaKeys);
+		col.color = grad;
+		trail.colorGradient = grad;
 		trail.time = config.trailLenght;
 		trail.widthMultiplier = config.trailWidth;
 		lifeTime = config.duration;
@@ -58,9 +59,8 @@ public class Bullet : MonoBehaviour {
 	public void Die() {
 		dead = true;
 		lifeTime = 0f;
-		foreach (ParticleSystem ps in particles) {
-			ps.Stop();
-		}
+		mainParticle.Stop();
+		secondaryParticle.Stop();
 	}
 
 	/// <summary>
