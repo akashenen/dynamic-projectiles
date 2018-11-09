@@ -31,7 +31,7 @@ public class Bullet : MonoBehaviour {
 		grad.SetKeys(config.colorGradient.colorKeys, col.color.gradient.alphaKeys);
 		col.color = grad;
 		trail.colorGradient = grad;
-		trail.time = config.trailLenght;
+		trail.time = config.trailLength;
 		trail.widthMultiplier = config.trailWidth;
 		lifeTime = config.duration;
 	}

@@ -22,8 +22,8 @@ public class Actor : MonoBehaviour {
     private void Shoot() {
         for (int i = 0; i < weapon.bulletCount; i++) {
             float iMulti = i - (weapon.bulletCount - 1) / 2f;
-            Vector3 pos = new Vector3(weapon.distance.x * iMulti,
-                weapon.distance.y * Mathf.Abs(iMulti), 0);
+            Vector3 pos = new Vector3(weapon.distance.x * iMulti, 0,
+                weapon.distance.y * Mathf.Abs(iMulti));
             Bullet bullet = BulletManager.Instance.Get();
             bullet.Init(weapon, gameObject, transform.position + pos,
                 weapon.angle * iMulti);
