@@ -1,5 +1,11 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!198 &8402094196492514516 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3960914923841800010, guid: a4392129ed9fd2d43a8e81f537946fb0,
+    type: 3}
+  m_PrefabInstance: {fileID: 4786696404710781854}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &4584993159848252130
 GameObject:
   m_ObjectHideFlags: 0
@@ -12,7 +18,7 @@ GameObject:
   - component: {fileID: 4584993159848252061}
   - component: {fileID: 4584993159848252060}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: Secondary Particle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3702,7 +3708,7 @@ ParticleSystem:
     serializedVersion: 2
     enabled: 0
     subEmitters:
-    - serializedVersion: 2
+    - serializedVersion: 3
       emitter: {fileID: 0}
       type: 0
       properties: 0
@@ -8544,7 +8550,7 @@ ParticleSystem:
     serializedVersion: 2
     enabled: 1
     subEmitters:
-    - serializedVersion: 2
+    - serializedVersion: 3
       emitter: {fileID: 3299671897665658151}
       type: 1
       properties: 0
@@ -9549,12 +9555,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 4584993160743943718}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: 64e94d5c119db2541924a69e042263b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mainParticle: {fileID: 4584993160743943714}
   secondaryParticle: {fileID: 4584993159848252061}
+  hitFlash: {fileID: 8402094196492514516}
+  hitShockwave: {fileID: 3299671897665658151}
+  hitSparks: {fileID: 7135422220330128228}
   trail: {fileID: 4584993159951438259}
+--- !u!198 &7135422220330128228 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2408264375708688634, guid: a4392129ed9fd2d43a8e81f537946fb0,
+    type: 3}
+  m_PrefabInstance: {fileID: 4786696404710781854}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7309139367527989992 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2810954818245931382, guid: a4392129ed9fd2d43a8e81f537946fb0,

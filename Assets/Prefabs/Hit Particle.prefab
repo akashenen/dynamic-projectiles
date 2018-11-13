@@ -222,7 +222,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.2783019, g: 0.7907076, b: 1, a: 1}
+      maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -3760,7 +3760,7 @@ ParticleSystem:
     serializedVersion: 2
     enabled: 0
     subEmitters:
-    - serializedVersion: 2
+    - serializedVersion: 3
       emitter: {fileID: 0}
       type: 0
       properties: 0
@@ -4980,7 +4980,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.2783019, g: 0.7907076, b: 1, a: 1}
+      maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -5806,13 +5806,13 @@ ParticleSystem:
           inWeight: 0.33333334
           outWeight: 0.3189655
         - serializedVersion: 3
-          time: 0.3
+          time: 0.5
           value: 0.9
-          inSlope: -0.27370194
-          outSlope: 0.14285718
+          inSlope: 0.7045629
+          outSlope: 0.20000005
           tangentMode: 65
           weightedMode: 0
-          inWeight: 0.54310346
+          inWeight: 0.4449761
           outWeight: 0.33333334
         - serializedVersion: 3
           time: 1
@@ -8527,12 +8527,12 @@ ParticleSystem:
     serializedVersion: 2
     enabled: 1
     subEmitters:
-    - serializedVersion: 2
+    - serializedVersion: 3
       emitter: {fileID: 2408264375708688634}
       type: 0
       properties: 0
       emitProbability: 1
-    - serializedVersion: 2
+    - serializedVersion: 3
       emitter: {fileID: 3960914923841800010}
       type: 0
       properties: 0
@@ -9750,7 +9750,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.2783019, g: 0.7907076, b: 1, a: 1}
+      maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -13288,7 +13288,7 @@ ParticleSystem:
     serializedVersion: 2
     enabled: 0
     subEmitters:
-    - serializedVersion: 2
+    - serializedVersion: 3
       emitter: {fileID: 0}
       type: 0
       properties: 0

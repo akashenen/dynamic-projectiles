@@ -7,6 +7,9 @@ public class Bullet : MonoBehaviour {
 
 	public ParticleSystem mainParticle;
 	public ParticleSystem secondaryParticle;
+	public ParticleSystem hitFlash;
+	public ParticleSystem hitShockwave;
+	public ParticleSystem hitSparks;
 	public TrailRenderer trail;
 
 	private WeaponConfig config;
@@ -24,16 +27,25 @@ public class Bullet : MonoBehaviour {
 		trail.Clear();
 		this.config = config;
 		this.parent = parent;
+		// recolor bullet
 		ParticleSystem.MainModule main = mainParticle.main;
 		main.startColor = config.mainColor;
-		ParticleSystem.ColorOverLifetimeModule col = secondaryParticle.colorOverLifetime;
+		ParticleSystem.ColorOverLifetimeModule secondaryColor = secondaryParticle.colorOverLifetime;
 		Gradient grad = new Gradient();
-		grad.SetKeys(config.colorGradient.colorKeys, col.color.gradient.alphaKeys);
-		col.color = grad;
+		grad.SetKeys(config.colorGradient.colorKeys, secondaryColor.color.gradient.alphaKeys);
+		secondaryColor.color = grad;
 		trail.colorGradient = grad;
 		trail.time = config.trailLength;
 		trail.widthMultiplier = config.trailWidth;
 		lifeTime = config.duration;
+		// recolor hit
+		ParticleSystem.MainModule flashColor = hitFlash.main;
+		ParticleSystem.MainModule shockwaveColor = hitShockwave.main;
+		ParticleSystem.MainModule sparksColor = hitSparks.main;
+		flashColor.startColor = config.mainColor;
+		shockwaveColor.startColor = config.mainColor;
+		sparksColor.startColor = config.mainColor;
+
 	}
 
 	// Update is called once per frame
