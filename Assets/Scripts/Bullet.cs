@@ -13,6 +13,7 @@ public class Bullet : MonoBehaviour {
 	public TrailRenderer trail;
 
 	private WeaponConfig config;
+	private WeaponConfig.BulletBehaviour behaviour;
 	private GameObject parent;
 	private Vector3 direction;
 	private Collider coll;
@@ -24,9 +25,11 @@ public class Bullet : MonoBehaviour {
 		coll = GetComponent<Collider>();
 		direction = Quaternion.Euler(0, angle, 0) * parent.transform.forward;
 		transform.position = position;
+		transform.rotation = parent.transform.rotation;
 		trail.Clear();
 		this.config = config;
 		this.parent = parent;
+		behaviour = config.behaviour;
 		// recolor bullet
 		ParticleSystem.MainModule main = mainParticle.main;
 		main.startColor = config.mainColor;
@@ -59,9 +62,17 @@ public class Bullet : MonoBehaviour {
 			}
 			return;
 		}
-		switch (config.behaviour) {
+		switch (behaviour) {
 			case WeaponConfig.BulletBehaviour.Straight:
 				transform.Translate(direction * config.speed * Time.deltaTime);
+				break;
+			case WeaponConfig.BulletBehaviour.Orbit:
+				Vector3 axis = new Vector3(0, 1, 0);
+				transform.RotateAround(parent.transform.position, axis, config.speed * 100f * Time.deltaTime);
+				Vector3 desiredPosition = (transform.position - parent.transform.position).normalized * 200f +
+					parent.transform.position;
+				transform.position = Vector3.MoveTowards(transform.position, desiredPosition,
+					Time.deltaTime * config.distance.x);
 				break;
 			default:
 				break;
