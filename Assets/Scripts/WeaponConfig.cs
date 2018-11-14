@@ -31,8 +31,8 @@ public class WeaponConfig : ScriptableObject {
 	public float angle;
 	[Tooltip("If checked, will ignore distance and angle properties and distribute the starting points of each bullet around the parent object.")]
 	public bool nova;
-	[Tooltip("If checked, will put each bullet at a random angle inside an arc defined by the angle property.")]
-	public bool randomAngle;
+	[Tooltip("If checked, will fire each bullet on a random order. Most useful when combined with burst spread.")]
+	public bool randomOrder;
 	[Tooltip("Traveling speed of each bullet fired")]
 	public float speed;
 	[Tooltip("Maximum lifetime in seconds for each bullet.")]
