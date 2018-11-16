@@ -13,22 +13,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7afeaa58288a1ff499b4a083110b778e, type: 3}
   m_Name: Default Weapon
   m_EditorClassIdentifier: 
-  mainColor: {r: 0.8301887, g: 0.15132922, b: 0.09789959, a: 1}
+  mainColor: {r: 1, g: 0.36689395, b: 0.315, a: 1}
   colorGradient:
     serializedVersion: 2
-    key0: {r: 0.8301887, g: 0.15132922, b: 0.09789959, a: 1}
-    key1: {r: 0.9497353, g: 1, b: 0.3537736, a: 1}
-    key2: {r: 0.07535296, g: 0.07535296, b: 0.7176471, a: 0}
-    key3: {r: 0, g: 0, b: 0, a: 0}
-    key4: {r: 0, g: 0, b: 0, a: 0}
+    key0: {r: 0.83137256, g: 0.0622418, b: 0, a: 1}
+    key1: {r: 1, g: 0.45385426, b: 0, a: 1}
+    key2: {r: 0.8867924, g: 0.833573, b: 0.13803846, a: 0}
+    key3: {r: 0.9843137, g: 0, b: 0.87937105, a: 0}
+    key4: {r: 0, g: 0.9843137, b: 0.4860909, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
     ctime0: 0
     ctime1: 39321
-    ctime2: 45875
-    ctime3: 65535
-    ctime4: 0
+    ctime2: 40478
+    ctime3: 39321
+    ctime4: 47031
     ctime5: 0
     ctime6: 0
     ctime7: 0
@@ -45,15 +45,15 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   trailLength: 0.7
   trailWidth: 0.2
-  bulletCount: 15
+  bulletCount: 9
   burstSpread: 0
-  distance: {x: 0.5, y: -0.2}
-  angle: 0
+  distance: {x: 1, y: -0.1}
+  angle: 2
   nova: 1
-  randomAngle: 0
-  speed: 10
-  duration: 6
+  randomOrder: 0
+  speed: 0.5
+  duration: 5
   deathTime: 1
   damageMulti: 1
-  rateMulti: 5
-  behaviour: 0
+  rateMulti: 1
+  behaviour: 2

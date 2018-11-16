@@ -1165,4 +1165,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 11400000, guid: 663d37d29a5f5264da1c3e3691ce1826, type: 2}
-  fireRate: 0.5
+  fireRate: 1

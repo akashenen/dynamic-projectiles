@@ -21,11 +21,13 @@ public class Bullet : MonoBehaviour {
 	private bool dead = true;
 
 	public void Init(WeaponConfig config, GameObject parent, Vector3 position, float angle) {
+		mainParticle.Stop();
+		secondaryParticle.Stop();
 		dead = false;
 		coll = GetComponent<Collider>();
 		direction = Quaternion.Euler(0, angle, 0) * parent.transform.forward;
 		transform.position = position;
-		transform.rotation = parent.transform.rotation;
+		transform.rotation = Quaternion.Euler(direction);
 		trail.Clear();
 		this.config = config;
 		this.parent = parent;
@@ -48,6 +50,8 @@ public class Bullet : MonoBehaviour {
 		flashColor.startColor = config.mainColor;
 		shockwaveColor.startColor = config.mainColor;
 		sparksColor.startColor = config.mainColor;
+		mainParticle.Play();
+		secondaryParticle.Play();
 
 	}
 
