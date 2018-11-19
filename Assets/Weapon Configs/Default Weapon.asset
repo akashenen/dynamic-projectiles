@@ -52,7 +52,7 @@ MonoBehaviour:
   nova: 1
   randomOrder: 0
   speed: 0.5
-  duration: 5
+  duration: 6
   deathTime: 1
   damageMulti: 1
   rateMulti: 1
