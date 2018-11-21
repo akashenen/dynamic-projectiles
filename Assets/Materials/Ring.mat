@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Default
+  m_Name: Ring
   m_Shader: {fileID: 4800000, guid: 59ac4f41c26e14c4485b6c4d98aa26c9, type: 3}
   m_ShaderKeywords: _ALBEDOCONTRIBUTION _COLORMAP
   m_LightmapFlags: 0
@@ -120,7 +120,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture:
-        m_Texture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
+        m_Texture: {fileID: 2800000, guid: e700f0327dbeb944c8760ebca186def4, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ThicknessMap:
@@ -297,7 +297,7 @@ Material:
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissiveColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Intensity: {r: 11.984314, g: 11.984314, b: 11.984314, a: 0}
+    - _Intensity: {r: 5.992157, g: 5.992157, b: 5.992157, a: 0}
     - _InvPrimScale: {r: 1, g: 1, b: 0, a: 0}
     - _IridescenceThicknessRemap: {r: 0, g: 1, b: 0, a: 0}
     - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}

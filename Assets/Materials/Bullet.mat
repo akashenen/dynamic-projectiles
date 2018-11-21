@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Default
-  m_Shader: {fileID: 4800000, guid: 59ac4f41c26e14c4485b6c4d98aa26c9, type: 3}
+  m_Name: Bullet
+  m_Shader: {fileID: 4800000, guid: 1ae872fe9bfa58a4e83b15eaed80e809, type: 3}
   m_ShaderKeywords: _ALBEDOCONTRIBUTION _COLORMAP
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 1
@@ -27,6 +27,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2D_B543BE4A:
+        m_Texture: {fileID: 2800000, guid: 33e75cd2400154146be333c29cd26ddf, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _AnisotropyMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -120,7 +124,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture:
-        m_Texture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
+        m_Texture: {fileID: 2800000, guid: 2f9d8ff36c9de61468b3397be55a3b88, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ThicknessMap:
@@ -137,6 +141,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _UnlitColorMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texture:
+        m_Texture: {fileID: 2800000, guid: ea14996022b744644b980898d4947f68, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -239,6 +247,7 @@ Material:
     - _MaterialID: 1
     - _Metallic: 0
     - _Mode: 0
+    - _Noise_Opacity: 0
     - _NormalBlendSrc: 0
     - _NormalMapSpace: 0
     - _NormalScale: 1
@@ -289,6 +298,7 @@ Material:
     - _ZTestGBuffer: 4
     - _ZTestModeDistortion: 4
     - _ZWrite: 1
+    - _offset_speed: 0.1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _CameraFadeParams: {r: 0, g: Infinity, b: 0, a: 0}
@@ -297,7 +307,7 @@ Material:
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissiveColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Intensity: {r: 11.984314, g: 11.984314, b: 11.984314, a: 0}
+    - _Intensity: {r: 5.992157, g: 5.992157, b: 5.992157, a: 0}
     - _InvPrimScale: {r: 1, g: 1, b: 0, a: 0}
     - _IridescenceThicknessRemap: {r: 0, g: 1, b: 0, a: 0}
     - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
@@ -309,3 +319,4 @@ Material:
     - _UVMappingMaskEmissive: {r: 1, g: 0, b: 0, a: 0}
     - _UVMappingMaskThread: {r: 1, g: 0, b: 0, a: 0}
     - _UnlitColor: {r: 1, g: 1, b: 1, a: 1}
+    - _color_intensity: {r: 2.9960785, g: 2.9960785, b: 2.9960785, a: 0}

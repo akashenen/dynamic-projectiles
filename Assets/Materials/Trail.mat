@@ -119,6 +119,10 @@ Material:
         m_Texture: {fileID: 2800000, guid: 6537cc2b791b40342b67345c80dbaf77, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Texture2DAsset_E860D603_Out:
+        m_Texture: {fileID: 2800000, guid: 91d05424f22174943a09ee4a92480168, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _ThicknessMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -133,6 +137,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _UnlitColorMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texture:
+        m_Texture: {fileID: 2800000, guid: 6537cc2b791b40342b67345c80dbaf77, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -285,6 +293,7 @@ Material:
     - _ZTestGBuffer: 4
     - _ZTestModeDistortion: 4
     - _ZWrite: 1
+    - _offset_speed: 0.1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _CameraFadeParams: {r: 0, g: Infinity, b: 0, a: 0}

@@ -42,4 +42,17 @@ public class BulletManager : MonoBehaviour {
         b.gameObject.SetActive(false);
         activeCount--;
     }
+
+    private void ClearPool() {
+        foreach (Bullet b in bulletPool) {
+            Destroy(b.gameObject);
+        }
+        bulletPool.Clear();
+        activeCount = 0;
+    }
+
+    public void SetNewPrefab(Bullet prefab) {
+        ClearPool();
+        bulletPrefab = prefab;
+    }
 }

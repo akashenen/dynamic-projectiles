@@ -50,7 +50,6 @@ public class WeaponConfig : ScriptableObject {
 
 	public enum BulletBehaviour {
 		Straight,
-		Homing,
 		Orbit
 	}
 
