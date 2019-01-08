@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Point
+  m_Name: Shine
   m_Shader: {fileID: 4800000, guid: 59ac4f41c26e14c4485b6c4d98aa26c9, type: 3}
   m_ShaderKeywords: _ALBEDOCONTRIBUTION _COLORMAP
   m_LightmapFlags: 0

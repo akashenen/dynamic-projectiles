@@ -31,6 +31,7 @@ public class SettingsPanelController : MonoBehaviour {
 
     public List<SettingsColorPalette> colorPalettes;
     public List<Bullet> bulletPrefabs;
+    public List<WeaponConfig> configPresets;
 
     private bool opened = false;
     private Animator animator;
@@ -38,6 +39,7 @@ public class SettingsPanelController : MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
         animator = GetComponent<Animator>();
+        LoadPreset(0);
     }
 
     // Update is called once per frame
@@ -87,7 +89,30 @@ public class SettingsPanelController : MonoBehaviour {
         actor.weapon = newConfig;
 
         BulletManager.Instance.SetNewPrefab(bulletPrefabs[styleDropdown.value]);
+    }
 
+    public void LoadPreset(int index) {
+        WeaponConfig preset = configPresets[index];
+        for (int i = 0; i < colorPalettes.Count; i++) {
+            if (colorPalettes[i].gradient.Equals(preset.colorGradient)) {
+                colorDropdown.value = i;
+            }
+        }
+        trailLengthSlider.value = preset.trailLength;
+        trailWidthSlider.value = preset.trailWidth;
+        bulletCountSlider.value = preset.bulletCount;
+        distanceXField.text = preset.distance.x.ToString(CultureInfo.InvariantCulture);
+        distanceYField.text = preset.distance.y.ToString(CultureInfo.InvariantCulture);
+        angleField.text = preset.angle.ToString(CultureInfo.InvariantCulture);
+        burstSpreadSlider.value = preset.burstSpread;
+        novaToggle.isOn = preset.nova;
+        randomOrderToggle.isOn = preset.randomOrder;
+        speedSlider.value = preset.speed;
+        durationSlider.value = preset.duration;
+        fireRateSlider.value = preset.rateMulti;
+        behaviourDropdown.value = preset.behaviour == WeaponConfig.BulletBehaviour.Straight ? 0 : 1;
+
+        ApplySettings();
     }
 
     [System.Serializable]
