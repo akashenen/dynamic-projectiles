@@ -88,7 +88,7 @@ public class SettingsPanelController : MonoBehaviour {
 
         actor.weapon = newConfig;
 
-        BulletManager.Instance.SetNewPrefab(bulletPrefabs[styleDropdown.value]);
+        actor.GetBulletManager().SetNewPrefab(bulletPrefabs[styleDropdown.value]);
     }
 
     public void LoadPreset(int index) {
@@ -116,7 +116,7 @@ public class SettingsPanelController : MonoBehaviour {
     }
 
     [System.Serializable]
-    public class SettingsColorPalette {
+    public struct SettingsColorPalette {
         public Color mainColor;
         public Gradient gradient;
     }
