@@ -9,7 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: 7afeaa58288a1ff499b4a083110b778e, type: 3}
   m_Name: Preset B
   m_EditorClassIdentifier: 
@@ -45,7 +44,7 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   trailLength: 2
   trailWidth: 0.05
-  bulletCount: 15
+  projectileCount: 15
   burstSpread: 1
   distance: {x: 1, y: -0.2}
   angle: 0

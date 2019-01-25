@@ -6406,7 +6406,7 @@ MonoBehaviour:
   colorDropdown: {fileID: 1164145808}
   trailLengthSlider: {fileID: 1618230008}
   trailWidthSlider: {fileID: 1583249586}
-  bulletCountSlider: {fileID: 38310486}
+  projectileCountSlider: {fileID: 38310486}
   distanceXField: {fileID: 2123000588}
   distanceYField: {fileID: 712595853}
   angleField: {fileID: 1979316113}
@@ -6598,10 +6598,10 @@ MonoBehaviour:
       m_Mode: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
-  bulletPrefabs:
-  - {fileID: 4584993160743943712, guid: 908ec4ac44f48d842a478a1b4ec44434, type: 3}
-  - {fileID: 4584993160743943712, guid: 0ee04adc986c80a41acd843f461a7ede, type: 3}
+  projectilePrefabs:
+  - {fileID: 1950270828677924704, guid: 908ec4ac44f48d842a478a1b4ec44434, type: 3}
   - {fileID: 4584993160743943712, guid: fd3925db7ab28e84db2620e3447912e2, type: 3}
+  - {fileID: 4584993160743943712, guid: 0ee04adc986c80a41acd843f461a7ede, type: 3}
   configPresets:
   - {fileID: 11400000, guid: b6c22974a96078b4c87b243c6b2143db, type: 2}
   - {fileID: 11400000, guid: 4f352a9e091465e4b9be977b073df53f, type: 2}
@@ -12819,7 +12819,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1270830624}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.603125
+  m_Size: 0.596875
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -17745,7 +17745,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2108523791}
   m_Layer: 5
-  m_Name: Bullet Count
+  m_Name: Projectile Count
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18162,5 +18162,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87202b221e7786b4b86e1c5ac8a19483, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 4584993160743943712, guid: 908ec4ac44f48d842a478a1b4ec44434,
+  projectilePrefab: {fileID: 1950270828677924704, guid: 908ec4ac44f48d842a478a1b4ec44434,
     type: 3}

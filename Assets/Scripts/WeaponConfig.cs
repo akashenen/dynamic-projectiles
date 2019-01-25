@@ -14,53 +14,53 @@ public class WeaponConfig : ScriptableObject {
 	public Color mainColor;
 	[Tooltip("Gradient used for the secondary particle and the trail")]
 	public Gradient colorGradient;
-	[Tooltip("Length of the bullet's trail")]
+	[Tooltip("Length of the projectile's trail")]
 	public float trailLength;
-	[Tooltip("Width of the bullet's trail")]
+	[Tooltip("Width of the projectile's trail")]
 	public float trailWidth;
 
 	[Header("Functional")]
-	[Tooltip("How many bullets should be fired at each burst.")]
-	public float bulletCount;
-	[Tooltip("How much time between each bullet should be proportionally spread across the interval of each burst. 0 = every bullet at the same time; 1 = bullets are spread across all the interval, making the bursts seem seamless.")]
+	[Tooltip("How many projectiles should be fired at each burst.")]
+	public float projectileCount;
+	[Tooltip("How much time between each projectile should be proportionally spread across the interval of each burst. 0 = every projectile at the same time; 1 = projectiles are spread across all the interval, making the bursts seem seamless.")]
 	[Range(0f, 1f)]
 	public float burstSpread;
-	[Tooltip("Starting position distance of each bullet in relation to the center one. Ignored in case of nova type burst.")]
+	[Tooltip("Starting position distance of each projectile in relation to the center one. Ignored in case of nova type burst.")]
 	public Vector2 distance;
-	[Tooltip("Angle (in degrees) between each bullet and the next.")]
+	[Tooltip("Angle (in degrees) between each projectile and the next.")]
 	public float angle;
-	[Tooltip("If checked, will ignore distance and angle properties and distribute the starting points of each bullet around the parent object.")]
+	[Tooltip("If checked, will ignore distance and angle properties and distribute the starting points of each projectile around the parent object.")]
 	public bool nova;
-	[Tooltip("If checked, will fire each bullet on a random order. Most useful when combined with burst spread.")]
+	[Tooltip("If checked, will fire each projectile on a random order. Most useful when combined with burst spread.")]
 	public bool randomOrder;
-	[Tooltip("Traveling speed of each bullet fired")]
+	[Tooltip("Traveling speed of each projectile fired")]
 	public float speed;
-	[Tooltip("Maximum lifetime in seconds for each bullet.")]
+	[Tooltip("Maximum lifetime in seconds for each projectile.")]
 	public float duration;
-	[Tooltip("How long each bullet takes for all particles to finish their animations before it gets disabled, can take longer depending on the desired effects. Default = 0.5 seconds")]
+	[Tooltip("How long each projectile takes for all particles to finish their animations before it gets disabled, can take longer depending on the desired effects. Default = 0.5 seconds")]
 	public float deathTime = 0.5f;
-	[Tooltip("Multiplier for the parent's damage for each bullet.")]
+	[Tooltip("Multiplier for the parent's damage for each projectile.")]
 	public float damageMulti;
 	[Tooltip("Multiplier for the parent's firing rate.")]
 	public float rateMulti;
-	[Tooltip("Behaviour of each bullet shot. Each behaviour is programmed individually, so you have to change the bullet script to add more behaviours.")]
-	public BulletBehaviour behaviour;
+	[Tooltip("Behaviour of each projectile shot. Each behaviour is programmed individually, so you have to change the projectile script to add more behaviours.")]
+	public ProjectileBehaviour behaviour;
 	[Tooltip("WIP. Will have no effect.")]
-	public List<BulletEffect> effects;
+	public List<ProjectileEffect> effects;
 
-	public enum BulletBehaviour {
+	public enum ProjectileBehaviour {
 		Straight,
 		Orbit
 	}
 
-	public enum BulletEffectType {
+	public enum ProjectileEffectType {
 		Explosion,
 		Fork,
 		Chain,
 	}
 
-	public struct BulletEffect {
-		public BulletEffectType type;
+	public struct ProjectileEffect {
+		public ProjectileEffectType type;
 		public float value;
 	}
 }

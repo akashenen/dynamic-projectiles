@@ -17,7 +17,7 @@ public class SettingsPanelController : MonoBehaviour {
     public TMP_Dropdown colorDropdown;
     public Slider trailLengthSlider;
     public Slider trailWidthSlider;
-    public Slider bulletCountSlider;
+    public Slider projectileCountSlider;
     public TMP_InputField distanceXField;
     public TMP_InputField distanceYField;
     public TMP_InputField angleField;
@@ -30,7 +30,7 @@ public class SettingsPanelController : MonoBehaviour {
     public TMP_Dropdown behaviourDropdown;
 
     public List<SettingsColorPalette> colorPalettes;
-    public List<Bullet> bulletPrefabs;
+    public List<Projectile> projectilePrefabs;
     public List<WeaponConfig> configPresets;
 
     private bool opened = false;
@@ -62,16 +62,16 @@ public class SettingsPanelController : MonoBehaviour {
         }
         switch (behaviourDropdown.value) {
             case 0:
-                newConfig.behaviour = WeaponConfig.BulletBehaviour.Straight;
+                newConfig.behaviour = WeaponConfig.ProjectileBehaviour.Straight;
                 break;
             case 1:
-                newConfig.behaviour = WeaponConfig.BulletBehaviour.Orbit;
+                newConfig.behaviour = WeaponConfig.ProjectileBehaviour.Orbit;
                 break;
             default:
-                newConfig.behaviour = WeaponConfig.BulletBehaviour.Straight;
+                newConfig.behaviour = WeaponConfig.ProjectileBehaviour.Straight;
                 break;
         }
-        newConfig.bulletCount = bulletCountSlider.value;
+        newConfig.projectileCount = projectileCountSlider.value;
         newConfig.burstSpread = burstSpreadSlider.value;
         newConfig.colorGradient = colorPalettes[colorDropdown.value].gradient;
         float x = distanceXField.text == "" ? 0f : float.Parse(distanceXField.text, CultureInfo.InvariantCulture);
@@ -88,7 +88,7 @@ public class SettingsPanelController : MonoBehaviour {
 
         actor.weapon = newConfig;
 
-        actor.GetBulletManager().SetNewPrefab(bulletPrefabs[styleDropdown.value]);
+        actor.GetProjectileManager().SetNewPrefab(projectilePrefabs[styleDropdown.value]);
     }
 
     public void LoadPreset(int index) {
@@ -100,7 +100,7 @@ public class SettingsPanelController : MonoBehaviour {
         }
         trailLengthSlider.value = preset.trailLength;
         trailWidthSlider.value = preset.trailWidth;
-        bulletCountSlider.value = preset.bulletCount;
+        projectileCountSlider.value = preset.projectileCount;
         distanceXField.text = preset.distance.x.ToString(CultureInfo.InvariantCulture);
         distanceYField.text = preset.distance.y.ToString(CultureInfo.InvariantCulture);
         angleField.text = preset.angle.ToString(CultureInfo.InvariantCulture);
@@ -110,7 +110,7 @@ public class SettingsPanelController : MonoBehaviour {
         speedSlider.value = preset.speed;
         durationSlider.value = preset.duration;
         fireRateSlider.value = preset.rateMulti;
-        behaviourDropdown.value = preset.behaviour == WeaponConfig.BulletBehaviour.Straight ? 0 : 1;
+        behaviourDropdown.value = preset.behaviour == WeaponConfig.ProjectileBehaviour.Straight ? 0 : 1;
 
         ApplySettings();
     }
