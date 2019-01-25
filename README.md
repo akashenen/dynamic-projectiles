@@ -10,8 +10,8 @@ All of the assets included in this project were made by myself, including 2D tex
 
 To demo this concept I made a scene with two static actors, one that fires projectiles and other that can be hit by them (but will not destroy the bullets). I also made a configuration UI in which you can change and play with each setting during runtime and included some presets.
   
-![](https://github.com/akashenen/dynamic-projectiles/blob/master/Gifs/Preset_A.gif) ![](https://github.com/akashenen/dynamic-projectiles/blob/master/Gifs/Gifs/Preset_B.gif)
-![](https://github.com/akashenen/dynamic-projectiles/blob/master/Gifs/Gifs/Preset_C.gif) ![](https://github.com/akashenen/dynamic-projectiles/blob/master/Gifs/Gifs/Preset_D.gif)
+![](https://github.com/akashenen/dynamic-projectiles/blob/master/Gifs/Preset_A.gif) ![](https://github.com/akashenen/dynamic-projectiles/blob/master/Gifs/Preset_B.gif)
+![](https://github.com/akashenen/dynamic-projectiles/blob/master/Gifs/Preset_C.gif) ![](https://github.com/akashenen/dynamic-projectiles/blob/master/Gifs/Preset_D.gif)
 
 ## Getting Started
 
