@@ -12,3 +12,5 @@ Temp/
 *.csproj
 
 *.sln
+
+Builds/
